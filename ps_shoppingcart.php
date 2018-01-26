@@ -82,7 +82,7 @@ class Ps_Shoppingcart extends Module implements WidgetInterface
         $cart_url = $this->getCartSummaryURL();
 
         return array(
-            'cart' => (new CartPresenter)->present(isset($params['cart']) ? $params['cart'] : $this->context->cart),
+            'cart' => (new CartPresenter)->present(isset($params['cart']) ? $params['cart'] : $this->context->cart, true),
             'refresh_url' => $this->context->link->getModuleLink('ps_shoppingcart', 'ajax', array(), null, null, null, true),
             'cart_url' => $cart_url
         );
